@@ -10,7 +10,7 @@ export default function Home() {
       <div className="relative w-[240px] h-[240px] lg:w-[424px] lg:h-[424px] mb-8 lg:mb-0">
         <Image src="./next.svg" alt="hero" fill/>
       </div>
-      <div>
+      <div className="flex flex-col items-center gap-y-3 max-w-[330px] w-full">
         <ClerkLoading>
           <Loader className="w-5 h-5"/>
         </ClerkLoading>

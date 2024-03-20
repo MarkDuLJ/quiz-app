@@ -4,6 +4,7 @@ import { Nunito } from "next/font/google";
 
 import "../globals.css";
 import { Header } from "./header";
+import { Footer } from "./footer";
 
 const font = Nunito({ subsets: ["latin"] });
 
@@ -25,9 +26,7 @@ export default function RootLayout({
             <Header />
           </header>
           {children}
-          <footer className="hidden lg:block">
-            this is footer
-          </footer>
+          <Footer />
         </body>
       </html>
     </ClerkProvider>
