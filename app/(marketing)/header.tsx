@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ClerkLoaded, ClerkLoading, SignInButton, SignedIn, UserButton } from "@clerk/nextjs"
+import { ClerkLoaded, ClerkLoading, SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import { Loader } from "lucide-react"
 import Image from "next/image"
 
@@ -11,6 +11,7 @@ export const Header = () => {
                 <Image src="/next.svg" alt="img" width={80} height={80}/>
                 <h1 className="text-2xl font-extrabold tracking-wide text-green-600">Quiz</h1>
             </div>
+
             <div className="ml-auto flex items-center">
                 <ClerkLoading>
                     <Loader className="h-5 w-5 text-muted-foreground"/>
@@ -24,6 +25,21 @@ export const Header = () => {
                     </SignInButton>
                 </ClerkLoaded>
             </div>
+
+            <ClerkLoading>
+                <Loader className="h-5 w-5 text-muted-foreground"/>
+            </ClerkLoading>
+            <ClerkLoaded>
+                <SignedIn>
+                    <UserButton afterSignOutUrl="/"/>
+                </SignedIn>
+                <SignedOut>
+                <SignInButton mode="modal" afterSignInUrl="/learn" afterSignUpUrl="/learn">
+                    <Button variant="ghost">Login</Button>
+                </SignInButton>
+                </SignedOut>
+            </ClerkLoaded>
+
             </div>
         </header>
     )
