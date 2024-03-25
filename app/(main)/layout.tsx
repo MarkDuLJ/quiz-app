@@ -8,12 +8,14 @@ export default function MainLayout({
 }) {
   return (
    <>
+      <div className="flex justify-around">
         <Sidebar />
-      <main className="lg:pl-[256px] pt-50 h-full bg-red-500 lg:pt-0">
-        <div className="max-w-[1056px] mx-auto pt-6 h-full">
-          {children}
-        </div>
-      </main>
-      </>
+        <main className="px-5 w-2/3">
+          <div className="max-w-[1056px] mx-auto pt-6 h-full">
+            {children}
+          </div>
+        </main>
+      </div>
+    </>
   )
 }
