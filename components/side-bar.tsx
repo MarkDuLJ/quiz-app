@@ -1,23 +1,15 @@
-import Image from "next/image"
+import cn from "classnames"
 import Link from "next/link"
 
 import { AirplayIcon, Loader } from "lucide-react";
 import { SidebarButton } from "./sidebar-button";
 import { ClerkLoaded, ClerkLoading, UserButton } from "@clerk/nextjs";
 
-export const Sidebar =()=>{
+export const Sidebar =({className}:{className?:string})=>{
     return (
-        <>
+        <div className={cn("flex flex-col bg-blue-300 lg:w-[256px] lg:fixed left-0 top-0 px4 border-r-2",className)}>
 
-            <div className="flex flex-col gap-y-3 flex-wrap items-start border-r-2">
-                {/* <div>
-                        <ClerkLoading>
-                            <Loader className="h-5 w-5 text-muted-foreground animate-spin"/>
-                        </ClerkLoading>
-                        <ClerkLoaded>
-                            <UserButton afterSignOutUrl="/" />
-                        </ClerkLoaded>
-                    </div> */}
+            <div className="flex flex-col gap-y-3 flex-wrap items-start ">
                 
                     <Link href="/learn">
                         <div className="flex items-center pt-6 pl-4 pb-8 gap-x-2">
@@ -28,8 +20,16 @@ export const Sidebar =()=>{
                     <SidebarButton href="/learn" label="Learn" iconSrc="/leaderboard.svg" />
                     <SidebarButton href="/dashboard" label="dashboard" iconSrc="/leaderboard.svg" />
                     <SidebarButton href="/shop" label="shop" iconSrc="/leaderboard.svg" />
-                
             </div>
-        </>
+                
+            <div className="flex justify-center items-center pt-4 pr-8">
+                    <ClerkLoading>
+                        <Loader className="h-5 w-5 text-muted-foreground animate-spin"/>
+                    </ClerkLoading>
+                    <ClerkLoaded>
+                        <UserButton afterSignOutUrl="/" />
+                    </ClerkLoaded>
+            </div>
+        </div>
     )
 }

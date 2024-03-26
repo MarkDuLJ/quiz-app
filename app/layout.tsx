@@ -3,8 +3,6 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Nunito } from "next/font/google";
 
 import "./globals.css";
-import { Header } from "./(marketing)/header";
-import { Footer } from "./(marketing)/footer";
 
 const font = Nunito({ subsets: ["latin"] });
 
@@ -21,10 +19,8 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={font.className}>          
-            <Header />          
+        <body className={font.className}>                  
           {children}
-          <Footer />
         </body>
       </html>
     </ClerkProvider>

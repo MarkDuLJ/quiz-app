@@ -3,9 +3,13 @@ import { ClerkLoaded, ClerkLoading, SignInButton, SignUpButton, SignedIn, Signed
 import { Loader } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Footer } from "./footer";
+import { Header } from "./header";
 
 export default function Home() {
   return (
+    <>
+    <Header/>
     <div className="w-full mx-auto flex flex-col max-w-[988px] lg:flex-row items-center justify-center p-4 gap-2">
       <div className="relative w-[240px] h-[240px] lg:w-[424px] lg:h-[424px] mb-8 lg:mb-0">
         <Image src="./next.svg" alt="hero" fill/>
@@ -37,5 +41,7 @@ export default function Home() {
         </ClerkLoaded>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
